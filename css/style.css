@@ -225,12 +225,25 @@ body.is-fixed-menu #menubar ul.ddmenu li a {
 	padding-left: 3%;		/*左側に空ける余白*/
 	letter-spacing: 0.1em;	/*文字間隔を少し広めにとる指定。通常がいいならこの１行削除。*/
 }
+
+/*h5タグ*/
+#contents h5 {
+	clear: both;
+	margin-bottom: 20px;
+	font-weight: bold;
+	font-size: 110%;	/*文字サイズ*/
+	/*border-bottom: 1px solid #ccc;*/	/*下線の幅、線種、色*/
+	padding-left: 1%;		/*左側に空ける余白*/
+	letter-spacing: 0.1em;	/*文字間隔を少し広めにとる指定。通常がいいならこの１行削除。*/
+}
+
 /*段落タグ*/
 #contents p {
 	padding: 0 3% 30px;	/*上、左右、下への余白*/
 }
 #contents h2 + p,
-#contents h3 + p {
+#contents h3 + p
+#contents h5 + p {
 	margin-top: -5px;
 }
 #contents p + p {
@@ -838,7 +851,7 @@ body.is-fixed #contents {
 body.s-n .sub,body.s-n #footermenu {display: none;}
 .big1 {font-size: 20px;}
 
-}
+/*}*/
 
 
 
@@ -860,6 +873,11 @@ body {
 }
 /*h3タグ*/
 #contents h3 {
+	margin-bottom: 20px;
+}
+
+/*h5タグ*/
+#contents h5 {
 	margin-bottom: 20px;
 }
 #contents section + section {
