@@ -27,7 +27,7 @@ body {
 	background: #fafafa;	/*背景色*/
 	-webkit-text-size-adjust: none;
 }
-h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure,form {margin: 0px;padding: 0px;font-size: 100%;font-weight: normal;}
+h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dt,dd,form,figure,form {margin: 0px;padding: 0px;font-size: 100%;font-weight: normal;}
 ul {list-style-type: none;}
 ol {padding-left: 40px;padding-bottom: 15px;}
 img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
@@ -94,6 +94,7 @@ header #logo {
 	float: left;	/*左に回り込み*/
 	width: 25%;		/*幅。今回は５個なので、100÷5=20。*/
 	font-size: 20px;	/*文字サイズ*/
+
 }
 #menubar ul li a {
 	text-decoration: none;display: block;
@@ -219,11 +220,15 @@ body.is-fixed-menu #menubar ul.ddmenu li a {
 /*h3タグ*/
 #contents h3 {
 	clear: both;
+	font-weight: bold;
 	margin-bottom: 30px;
 	font-size: 150%;	/*文字サイズ*/
 	border-bottom: 1px solid #ccc;	/*下線の幅、線種、色*/
-	padding-left: 3%;		/*左側に空ける余白*/
+	padding-top: 5%;
+	padding-left: 1%;		/*左側に空ける余白*/
 	letter-spacing: 0.1em;	/*文字間隔を少し広めにとる指定。通常がいいならこの１行削除。*/
+	color: darkgreen;
+
 }
 
 /*h5タグ*/
@@ -237,12 +242,25 @@ body.is-fixed-menu #menubar ul.ddmenu li a {
 	letter-spacing: 0.1em;	/*文字間隔を少し広めにとる指定。通常がいいならこの１行削除。*/
 }
 
+#contents h6 {
+	clear: both;
+	margin-bottom: 30px;
+	font-size: 150%;	/*文字サイズ*/
+	padding-left: 1%;		/*左側に空ける余白*/
+	letter-spacing: 0.1em;	/*文字間隔を少し広めにとる指定。通常がいいならこの１行削除。*/
+	color: red;
+
+}
+
 /*段落タグ*/
 #contents p {
 	padding: 0 3% 30px;	/*上、左右、下への余白*/
+	font-size: 110%;	/*文字サイズ*/
+	padding-left: 5%;		/*左側に空ける余白*/
 }
 #contents h2 + p,
-#contents h3 + p
+#contents h3 + p,
+#contents h6 + p,
 #contents h5 + p {
 	margin-top: -5px;
 }
@@ -884,6 +902,10 @@ body {
 	margin-top: 30px;
 }
 
+/*h6タグ*/
+#contents h6 {
+	margin-bottom: 20px;
+}
 /*list（worksページで使っている横長ブロック）
 ---------------------------------------------------------------------------*/
 /*ボックス内のボタン（共通）*/
@@ -991,4 +1013,101 @@ body {
 	display: none;
 }
 .resizeimage img { width: 100%; }
+}
+
+/* 横並び */
+@media screen and (max-width:1250px){
+	.flex {
+		margin: 0 auto;
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+
+	.flex .title {
+		clear: both;
+		margin-bottom: 0px;
+		font-size: 300%;	/*文字サイズ*/
+	
+		/*letter-spacing: 0.2em;*/	/*文字間隔を少し広めにとる指定。通常がいいならこの１行削除。*/
+	}
+
+	.flex .text {
+		font-size: 110%;	/*文字サイズ*/
+		margin: 1% 0 0;
+		padding: 0;
+	}
+	  
+
+}
+@media screen and (min-width:1250px){
+
+.flex {
+	display: flex; /*横並び*/
+	max-width: 1400px;	/*サイトの最大幅*/
+	margin: 0 auto;
+	padding-left: 2%;
+	padding-right: 2%;
+  }
+
+  .flex .image {
+	width: 640px; /*画像サイズ指定*/
+	height: 480px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+  }
+  .flex .right {
+	margin: 0 0 0 20px;
+	padding: 0;
+  }
+  /*
+  .flex .title {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-size: 18px;
+  }
+  */
+  .flex .title {
+	clear: both;
+	margin-bottom: 0px;
+	font-size: 300%;	/*文字サイズ*/
+	font-weight: bold;
+	/*letter-spacing: 0.2em;*/	/*文字間隔を少し広めにとる指定。通常がいいならこの１行削除。*/
+  }
+  .flex .text {
+	font-size: 110%;	/*文字サイズ*/
+	margin: 1% 0 0;
+	padding: 0;
+  }
+  
+  /* 画像を天地中央表示 */
+
+  .flex .image {
+	overflow: hidden;
+	position: relative;
+  }
+  .flex .image::before {
+	content: "";
+	display: block;
+	padding-top: 58%;
+  }
+  .flex .image img {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	/*margin: auto;*/
+  }
+  
+  .flex .resizeimage img { width: 90%; }
+}
+ 
+ol li{
+	margin-left: 6%;
+	text-indent: -1em;
+	padding-left: 2em;
 }
